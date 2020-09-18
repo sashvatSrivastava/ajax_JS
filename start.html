@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="run">
+<h2>AJAX</h2>
+<button type="button" onclick="loadDoc()">Change Content</button>
+</div>
+
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("run").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "start.htm", true);
+  xhttp.send();
+}
+</script>
+<iframe width="1707" height="960" src="https://www.youtube.com/embed/ZkagQFm8rI4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</body>
+</html>
